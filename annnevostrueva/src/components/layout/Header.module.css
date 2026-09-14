@@ -1,0 +1,35 @@
+.header {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.logo {
+  color: var(--color-on-primary);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.nav {
+  display: flex;
+  gap: var(--space-4);
+}
+.nav a {
+  color: var(--color-on-primary);
+  opacity: .85;
+}
+.nav a:hover {
+  opacity: 1;
+  color: var(--color-on-primary);
+}
+.nav a.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 2px;
+}
