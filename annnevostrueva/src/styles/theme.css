@@ -26,5 +26,5 @@
   --space-4: 24px;
   --space-5: 40px;
 
-  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-main: 'NevaFont', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }

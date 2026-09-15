@@ -1,0 +1,64 @@
+.title {
+  margin-bottom: var(--space-4);
+}
+
+/* === ТАБЫ === */
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-4);
+  scrollbar-width: none;       /* Firefox: скрыть скроллбар */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;               /* Chrome/Safari: скрыть скроллбар */
+}
+
+.tab {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+  border: 1px solid transparent;
+}
+
+.tab:hover {
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+
+.tab.active {
+  background: var(--color-secondary);
+  color: var(--color-on-primary);
+  border-color: transparent;
+}
+
+/* === СЕТКА === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === ПУСТОЕ СОСТОЯНИЕ === */
+.empty {
+  padding: var(--space-5) 0;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}

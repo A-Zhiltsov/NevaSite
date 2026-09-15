@@ -1,0 +1,27 @@
+.summary {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1rem;
+}
+
+.total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.linkWrap {
+  display: block;
+}
+
+.linkWrap button {
+  width: 100%;
+}

@@ -1,7 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const { totalCount, openCart } = useCart();
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
@@ -9,6 +12,17 @@ export default function Header() {
         <nav className={styles.nav}>
           <NavLink to="/" end>Главная</NavLink>
           <NavLink to="/catalog">Каталог</NavLink>
+          <button
+            type="button"
+            className={styles.cartBtn}
+            onClick={openCart}
+            aria-label="Открыть корзину"
+          >
+            🛒
+            {totalCount > 0 && (
+              <span className={styles.badge}>{totalCount}</span>
+            )}
+          </button>
         </nav>
       </div>
     </header>
