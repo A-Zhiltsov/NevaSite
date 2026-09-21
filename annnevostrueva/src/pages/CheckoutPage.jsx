@@ -15,6 +15,8 @@ export default function CheckoutPage() {
     address: '',
     delivery: 'cdek',
     comment: '',
+    agreeOffer: false,
+    agreePrivacy: false,
   });
 
   function handleChange(e) {
@@ -22,11 +24,17 @@ export default function CheckoutPage() {
     setForm(prev => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // здесь позже будет запрос к бэкенду → создание платежа в ЮKassa
-    alert('Оплата скоро появится');
+function handleSubmit(e) {
+  e.preventDefault();
+
+  if (!form.agreeOffer || !form.agreePrivacy) {
+    alert('Необходимо согласиться с офертой и обработкой персональных данных');
+    return;
   }
+
+  // здесь позже будет запрос к бэкенду → создание платежа в ЮKassa
+  alert('Оплата скоро появится');
+}
 
   // пустая корзина — форма бессмысленна
   if (items.length === 0) {
@@ -152,6 +160,40 @@ export default function CheckoutPage() {
               />
             </label>
           </section>
+
+          <section className={styles.section}>
+            <label className={styles.checkbox}>
+              <input
+                type="checkbox"
+                name="agreeOffer"
+                checked={form.agreeOffer}
+                onChange={handleChange}
+              />
+              <span>
+                Я ознакомлен(а) и согласен(на) с условиями{' '}
+                <a href="/terms" target="_blank" rel="noopener noreferrer">
+                  публичной оферты
+                </a>
+              </span>
+            </label>
+
+            <label className={styles.checkbox}>
+              <input
+                type="checkbox"
+                name="agreePrivacy"
+                checked={form.agreePrivacy}
+                onChange={handleChange}
+              />
+              <span>
+                Я даю согласие на обработку моих персональных данных в соответствии
+                с{' '}
+                <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                  политикой конфиденциальности
+                </a>
+              </span>
+            </label>
+          </section>
+
         </form>
 
         {/* === СВОДКА === */}

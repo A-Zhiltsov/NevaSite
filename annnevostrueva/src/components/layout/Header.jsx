@@ -12,6 +12,8 @@ export default function Header() {
         <nav className={styles.nav}>
           <NavLink to="/" end>Главная</NavLink>
           <NavLink to="/catalog">Каталог</NavLink>
+          <NavLink to="/terms">Оферта</NavLink>
+          <NavLink to="/privacy">Политика конфиденциальности</NavLink>
           <button
             type="button"
             className={styles.cartBtn}

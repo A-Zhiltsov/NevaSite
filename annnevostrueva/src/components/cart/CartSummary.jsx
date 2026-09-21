@@ -12,7 +12,7 @@ export default function CartSummary({ variant = 'drawer' }) {
     <div className={styles.summary}>
       <div className={styles.row}>
         <span>Товары ({totalCount} шт.)</span>
-        <span className={styles.total}>{totalPrice.toLocaleString('ru-RU')} ₽</span>
+        <span className={styles.total}>{totalPrice.toLocaleString('ru-RU')} Р.</span>
       </div>
 
       {isDrawer ? (

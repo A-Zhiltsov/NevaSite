@@ -19,7 +19,7 @@ export default function CartItem({ item, variant = 'compact' }) {
       <div className={styles.info}>
         <h4 className={styles.title}>{product.title}</h4>
         <p className={styles.price}>
-          {product.price.toLocaleString('ru-RU')} ₽
+          {product.price.toLocaleString('ru-RU')} Р.
         </p>
       </div>
 
